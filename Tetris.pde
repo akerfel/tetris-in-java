@@ -28,6 +28,5 @@ void draw() {
     if (!gameOver) {
         updateGameStateIfTimerReady();
     }
-    
     drawEverything();
 }
