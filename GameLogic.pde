@@ -22,19 +22,19 @@ Piece createRandomPiece() {
     println(randomNum);
     switch (randomNum) {
         case 0:
-            return new LPiece();
+            return new Piece_I();
         case 1:
-            return new LPiece();
+            return new Piece_J();
         case 2:
-            return new LPiece();
+            return new Piece_L();
         case 3:
-            return new TPiece();
+            return new Piece_O();
         case 4:
-            return new TPiece();
+            return new Piece_S();
         case 5:
-            return new TPiece();
+            return new Piece_T();
         case 6:
-            return new TPiece();
+            return new Piece_Z();
     }
-    return new LPiece();
+    return null;
 }
