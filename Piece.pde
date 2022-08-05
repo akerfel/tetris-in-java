@@ -3,19 +3,24 @@ public class Piece {
     int y;
     PVector[] blocks;
     int rotation;        // Between 0 and 3
+    color rgbColor;
     
     public Piece() {
-        x = 5;
         y = 0;
-        blocks = new PVector[4];
         rotation = 0;
+        blocks = new PVector[4];
+    }
+    
+    // This function should be called in the end of the constructor for each subclass.
+    // This is because some subclasses have different x-coordinate-starting-positions,
+    // and some of the function calls in this function depend on the x-coordinate.
+    void setupAfterSubclassConstructor() {
         setBlocksBasedOnRotation();
         if (pieceIsCollidingWithFilledBlock()) {
             fillBlocks();
             gameOver = true;  
         }
     }
-    
     
     // Needs to be overriden by subclasses
     void setBlocksBasedOnRotation() {
@@ -129,6 +134,7 @@ public class Piece {
     
     void fillBlocks() {
         for (int i = 0; i < 4; i++) {
+            fillBlockAndSetColor(x + int(blocks[i].x), y + int(blocks[i].y), rgbColor);
             grid.grid[x + int(blocks[i].x)][y + int(blocks[i].y)].isFilled = true;
         }
     }

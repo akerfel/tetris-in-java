@@ -18,8 +18,11 @@ boolean makePieceFallOrSpawnNewPiece() {
 }
 
 Piece createRandomPiece() {
+    if (onlySpawnLongPieces) {
+        return new Piece_I();
+    }
+    
     int randomNum = int(random(0, 7));
-    println(randomNum);
     switch (randomNum) {
         case 0:
             return new Piece_I();
@@ -37,4 +40,9 @@ Piece createRandomPiece() {
             return new Piece_Z();
     }
     return null;
+}
+
+void fillBlockAndSetColor(int x, int y, color rgbColor) {
+    grid.grid[x][y].isFilled = true;
+    grid.grid[x][y].rgbColor = rgbColor;
 }

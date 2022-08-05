@@ -2,6 +2,9 @@ public class Piece_I extends Piece {
     
     public Piece_I() {
         super();
+        x = 3;
+        rgbColor = color(0, 255, 255);
+        setupAfterSubclassConstructor();
     }
     
     void setBlocksBasedOnRotation() {

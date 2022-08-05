@@ -1,7 +1,11 @@
+// Cheats
+boolean onlySpawnLongPieces;
+
 // Settings
 int timeIntervalFlag;
 int gridWidth;
 int gridHeight;
+color backgroundColor;
 
 // Dynamic variables
 int lastTimeCheck;
@@ -9,11 +13,15 @@ Grid grid;
 Piece currentPiece;
 boolean gameOver;
 
-void setup() { 
+void setup() {
+    // Cheats
+    onlySpawnLongPieces = false;
+    
     // Settings
     timeIntervalFlag = 500;
     gridWidth = 10;
     gridHeight = 20;
+    backgroundColor = color(0);
     
     // Dynamic variables
     size(600, 800);

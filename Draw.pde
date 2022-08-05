@@ -1,5 +1,5 @@
 void drawEverything() {
-    background(0);
+    background(backgroundColor);
     translate((width - grid.blockLength * grid.w)/2, (height - grid.blockLength * grid.h)/2);
     drawGrid();
     translate(-(width - grid.blockLength * grid.w)/2, -(height - grid.blockLength * grid.h)/2);
@@ -14,7 +14,7 @@ void drawGrid() {
     for (int y = 0; y < grid.h; y++) {
       stroke(130, 130, 130);
       if (grid.grid[x][y].isFilled) {
-        fill(255, 255, 255);
+        fill(grid.grid[x][y].rgbColor);
         rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
       }
       else {
