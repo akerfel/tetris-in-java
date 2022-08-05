@@ -1,7 +1,7 @@
 void updateGameLogic() {
     if (currentPiece != null) {
         if (!currentPiece.fallOneStep()) {
-            currentPiece = null;
+            currentPiece = new Piece();
         }
     }
 }

@@ -7,6 +7,7 @@ int gridHeight;
 Grid grid;
 Piece currentPiece;
 int lastTimeCheck;
+boolean gameOver;
 
 void setup() { 
     // Settings
@@ -18,12 +19,16 @@ void setup() {
     size(600, 800);
     grid = new Grid();
     currentPiece = new Piece();
+    gameOver = false;
 }
 
 void draw() {
-    if (millis() > lastTimeCheck + timeIntervalFlag) {
-        lastTimeCheck = millis();
-        updateGameLogic();
+    if (!gameOver) {
+        if (millis() > lastTimeCheck + timeIntervalFlag) {
+            lastTimeCheck = millis();
+            updateGameLogic();
+        }
     }
+    
     drawEverything();
 }

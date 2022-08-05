@@ -2,6 +2,10 @@ void drawEverything() {
     background(0);
     translate((width - grid.blockLength * grid.w)/2, (height - grid.blockLength * grid.h)/2);
     drawGrid();
+    translate(-(width - grid.blockLength * grid.w)/2, -(height - grid.blockLength * grid.h)/2);
+    if (gameOver) {
+        drawGameOver();    
+    }
 }
 
 
@@ -19,4 +23,11 @@ void drawGrid() {
       }
     }
   }
+}
+
+void drawGameOver() {
+    textSize(40);
+    textAlign(CENTER, CENTER);
+    fill(200, 0, 0);
+    text("GAME OVER", width/2, height/2);
 }

@@ -10,17 +10,19 @@ public class Piece {
         blocks = new PVector[4];
         rotation = 0;
         setBlocksBasedOnRotation();
+        if (pieceIsCollidingWithFilledBlock()) {
+            fillBlocks();
+            gameOver = true;  
+        }
     }
     
     // Return true if rotation was succesful, otherwise false.
     boolean tryToRotate() {
         unfillBlocks();
-        println("rotate before: " + rotation);
         rotate();
         
         if (pieceIsOutsideGrid() || pieceIsCollidingWithFilledBlock()) {
             antiRotate();
-            println("rotate after: " + rotation);
             fillBlocks();
             return false;    
         }
@@ -42,7 +44,6 @@ public class Piece {
         if (rotation == -1) {
             rotation = 3;    
         }
-        println("EYYYYYYY " + rotation);
         setBlocksBasedOnRotation();
     }
     
@@ -72,8 +73,6 @@ public class Piece {
     
     boolean blockIsOutsideGrid(int blockIndex) {
         if (getXCoordForBlock(blockIndex) < 0 || getXCoordForBlock(blockIndex) > gridWidth - 1) {
-            println("x: " + getXCoordForBlock(blockIndex));
-            println("---------------");
             return true;    
         }
         if (getYCoordForBlock(blockIndex) < 0 || getYCoordForBlock(blockIndex) > gridHeight - 1) {
@@ -159,7 +158,6 @@ public class Piece {
                 rightmostX = int(x + blocks[i].x);
             }
         }
-        println("rightmostX: " + rightmostX);
         return rightmostX;
     }
     
