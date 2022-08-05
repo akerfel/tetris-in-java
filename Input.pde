@@ -20,6 +20,7 @@ void keyPressed() {
             // Make current piece fall until a new piece is spawned.
             while (!makePieceFallOrSpawnNewPiece());
             lastTimeCheck = millis();
+            makePieceFallOrSpawnNewPiece();
         }
     }
 }

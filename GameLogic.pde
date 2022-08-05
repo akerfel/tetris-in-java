@@ -10,9 +10,31 @@ void updateGameStateIfTimerReady() {
 boolean makePieceFallOrSpawnNewPiece() {
     if (currentPiece != null) {
         if (!currentPiece.fallOneStep()) {
-            currentPiece = new TPiece();
+            currentPiece = createRandomPiece();
             return true;
         }
     }
     return false;
+}
+
+Piece createRandomPiece() {
+    int randomNum = int(random(0, 7));
+    println(randomNum);
+    switch (randomNum) {
+        case 0:
+            return new LPiece();
+        case 1:
+            return new LPiece();
+        case 2:
+            return new LPiece();
+        case 3:
+            return new TPiece();
+        case 4:
+            return new TPiece();
+        case 5:
+            return new TPiece();
+        case 6:
+            return new TPiece();
+    }
+    return new LPiece();
 }

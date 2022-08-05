@@ -11,7 +11,7 @@ boolean gameOver;
 
 void setup() { 
     // Settings
-    timeIntervalFlag = 1400;
+    timeIntervalFlag = 500;
     gridWidth = 10;
     gridHeight = 20;
     
@@ -19,7 +19,7 @@ void setup() {
     size(600, 800);
     lastTimeCheck = millis();
     grid = new Grid();
-    currentPiece = new TPiece();
+    currentPiece = createRandomPiece();
     currentPiece.fillBlocks();
     gameOver = false;
 }
