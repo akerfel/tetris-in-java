@@ -1,21 +1,21 @@
 void updateGameLogic() {
-   unfillCurrentPieceBlocks();
+   unfillPieceBlocks(currentPiece);
    makeCurrentPieceFallOneStep();
-   fillCurrentPieceBlocks();
+   fillPieceBlocks(currentPiece);
 }
 
 void makeCurrentPieceFallOneStep() {
     currentPiece.y += 1;
 }
 
-void unfillCurrentPieceBlocks() {
+void unfillPieceBlocks(Piece piece) {
     for (int i = 0; i < 4; i++) {
-        grid.grid[currentPiece.x + int(currentPiece.blocks[i].x)][currentPiece.y + int(currentPiece.blocks[i].y)].filled = false;
+        grid.grid[piece.x + int(piece.blocks[i].x)][piece.y + int(piece.blocks[i].y)].filled = false;
     }
 }
 
-void fillCurrentPieceBlocks() {
+void fillPieceBlocks(Piece piece) {
     for (int i = 0; i < 4; i++) {
-        grid.grid[currentPiece.x + int(currentPiece.blocks[i].x)][currentPiece.y + int(currentPiece.blocks[i].y)].filled = true;
+        grid.grid[piece.x + int(piece.blocks[i].x)][piece.y + int(piece.blocks[i].y)].filled = true;
     }
 }

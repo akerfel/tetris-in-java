@@ -1,16 +1,19 @@
 Grid grid;
-TPiece currentPiece;
+Piece currentPiece;
+int lastTimeCheck;
+int timeIntervalFlag = 800;
 
 void setup() { 
     size(600, 800);
     grid = new Grid();
-    //grid.randomize();
-  
-    currentPiece = new TPiece();
+    
+    currentPiece = new Piece();
 }
 
 void draw() {
-    updateGameLogic();
-    drawEverything();
-    delay(400);
+    if (millis() > lastTimeCheck + timeIntervalFlag) {
+        lastTimeCheck = millis();
+        updateGameLogic();
+        drawEverything();
+    }
 }
