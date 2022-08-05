@@ -2,15 +2,15 @@ Grid grid;
 TPiece currentPiece;
 
 void setup() { 
-  size(600, 800);
-  grid = new Grid();
-  //grid.randomize();
+    size(600, 800);
+    grid = new Grid();
+    //grid.randomize();
   
-  currentPiece = new TPiece();
+    currentPiece = new TPiece();
 }
 
 void draw() {
-  updateGameLogic();
-  drawEverything();
-  delay(400);
+    updateGameLogic();
+    drawEverything();
+    delay(400);
 }
