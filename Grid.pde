@@ -1,12 +1,12 @@
 public class Grid {
     Block[][] grid;
-    int w = 10; // width
-    int h = 20; // height
-    int s; // side length of each block
+    int w = gridWidth; // width
+    int h = gridHeight; // height
+    int blockLength; // side length of each block
   
     public Grid() {
         grid = new Block[w][h];
-        s = min(width/(2+w), height/(2+h));
+        blockLength = min(width/(2+w), height/(2+h));
         initializeBlocks();
         setLowestBlocksToStuckAndFilled();
     }
@@ -23,7 +23,7 @@ public class Grid {
         for (int x = 0; x < w; x++) {
             for (int y = 0; y < h; y++) {
                 if (random(0, 10) < 3) {
-                    grid[x][y].filled = true;
+                    grid[x][y].isFilled = true;
                 }
             }
         }
@@ -31,8 +31,8 @@ public class Grid {
   
     void setLowestBlocksToStuckAndFilled() {
         for (int x = 0; x < w; x++) {
-            grid[x][h-1].filled = true;
-            grid[x][h-1].stuck = true;
+            grid[x][h-1].isFilled = true;
+            grid[x][h-1].isStuck = true;
         }
     }
 }

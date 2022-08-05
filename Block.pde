@@ -1,9 +1,9 @@
 public class Block {
-    boolean filled;
-    boolean stuck;
+    boolean isFilled;
+    boolean isStuck;
   
-    public Block(boolean filled, boolean stuck) {
-        this.filled = filled;
-        this.stuck = stuck;
+    public Block(boolean isFilled, boolean isStuck) {
+        this.isFilled = isFilled;
+        this.isStuck = isStuck;
     }
 }
