@@ -10,7 +10,7 @@ void updateGameStateIfTimerReady() {
 boolean makePieceFallOrSpawnNewPiece() {
     if (currentPiece != null) {
         if (!currentPiece.fallOneStep()) {
-            currentPiece = new Piece();
+            currentPiece = new TPiece();
             return true;
         }
     }

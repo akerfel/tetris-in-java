@@ -19,7 +19,7 @@ void setup() {
     size(600, 800);
     lastTimeCheck = millis();
     grid = new Grid();
-    currentPiece = new Piece();
+    currentPiece = new TPiece();
     currentPiece.fillBlocks();
     gameOver = false;
 }
