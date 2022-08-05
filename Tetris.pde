@@ -4,9 +4,9 @@ int gridWidth;
 int gridHeight;
 
 // Dynamic variables
+int lastTimeCheck;
 Grid grid;
 Piece currentPiece;
-int lastTimeCheck;
 boolean gameOver;
 
 void setup() { 
@@ -17,17 +17,16 @@ void setup() {
     
     // Dynamic variables
     size(600, 800);
+    lastTimeCheck = millis();
     grid = new Grid();
     currentPiece = new Piece();
+    currentPiece.fillBlocks();
     gameOver = false;
 }
 
 void draw() {
     if (!gameOver) {
-        if (millis() > lastTimeCheck + timeIntervalFlag) {
-            lastTimeCheck = millis();
-            updateGameLogic();
-        }
+        updateGameStateIfTimerReady();
     }
     
     drawEverything();

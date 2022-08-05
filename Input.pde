@@ -11,9 +11,15 @@ void keyPressed() {
                 currentPiece.tryToMoveRight();    
             }
             if (keyCode == DOWN) {
-                updateGameLogic();    
+                makePieceFallOrSpawnNewPiece();    
                 lastTimeCheck = millis();
             }
+        }
+        
+        if (key == ' ') {
+            // Make current piece fall until a new piece is spawned.
+            while (!makePieceFallOrSpawnNewPiece());
+            lastTimeCheck = millis();
         }
     }
 }
