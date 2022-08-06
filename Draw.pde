@@ -18,7 +18,7 @@ void drawGrid() {
         rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
       }
       else {
-        fill(0, 0, 0);
+        fill(200);
         rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
       }
     }
