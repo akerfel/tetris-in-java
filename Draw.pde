@@ -1,14 +1,13 @@
 void drawEverything() {
     background(backgroundColor);
-    translate((width - grid.blockLength * grid.w)/2, (height - grid.blockLength * grid.h)/2);
     drawGrid();
-    translate(-(width - grid.blockLength * grid.w)/2, -(height - grid.blockLength * grid.h)/2);
     if (gameOver) {
         drawGameOver();    
     }
 }
 
 void drawGrid() {
+    translate((width - grid.blockLength * grid.w)/2, (height - grid.blockLength * grid.h)/2);
     for (int x = 0; x < grid.w; x++) {
         for (int y = 0; y < grid.h; y++) {
             stroke(130, 130, 130);
@@ -17,11 +16,16 @@ void drawGrid() {
                   rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
             }
             else {
-                fill(200);
+                fill(gridBackgroundColor);
                 rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
             }
         }
     }
+    translate(-(width - grid.blockLength * grid.w)/2, -(height - grid.blockLength * grid.h)/2);
+}
+
+void drawHeldPiece() {
+    
 }
 
 void drawGameOver() {

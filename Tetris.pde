@@ -6,6 +6,7 @@ int timeIntervalFlag;
 int gridWidth;
 int gridHeight;
 color backgroundColor;
+color gridBackgroundColor;
 
 // Dynamic variables
 int lastTimeCheck;
@@ -25,6 +26,7 @@ void setup() {
     gridWidth = 10;
     gridHeight = 20;
     backgroundColor = color(0);
+    gridBackgroundColor = color(200);
     
     // Dynamic variables
     size(600, 800);
