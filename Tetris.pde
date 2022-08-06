@@ -16,7 +16,7 @@ Piece heldPiece;
 boolean canHoldPiece;
 boolean gameOver;
 
-
+// This function is called once, at startup.
 void setup() {
     // Cheats
     onlySpawnLongPieces = false;
@@ -39,6 +39,7 @@ void setup() {
     gameOver = false;
 }
 
+// This function is called ~60 times per second.
 void draw() {
     if (!gameOver) {
         updateGameStateIfTimerReady();
