@@ -100,6 +100,7 @@ void holdCurrentPiece() {
             currentPiece = createRandomPiece();
             currentPiece.fillBlocks();
             heldPiece.rotation = 0;
+            heldPiece.setStartCoordinates();
         }
         else {
             currentPiece.unfillBlocks();
@@ -108,6 +109,7 @@ void holdCurrentPiece() {
             currentPiece = tempPiece;
             currentPiece.setStartCoordinates();
             currentPiece.fillBlocks();
+            heldPiece.setStartCoordinates();
             heldPiece.rotation = 0;
         }
     }
