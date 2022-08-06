@@ -99,7 +99,7 @@ void holdCurrentPiece() {
             heldPiece = currentPiece;
             currentPiece = createRandomPiece();
             currentPiece.fillBlocks();
-            heldPiece.rotation = 0;
+            heldPiece.setRotation(0);
             heldPiece.setStartCoordinates();
         }
         else {
@@ -110,7 +110,7 @@ void holdCurrentPiece() {
             currentPiece.setStartCoordinates();
             currentPiece.fillBlocks();
             heldPiece.setStartCoordinates();
-            heldPiece.rotation = 0;
+            heldPiece.setRotation(0);
         }
     }
 }

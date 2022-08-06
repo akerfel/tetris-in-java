@@ -62,6 +62,11 @@ abstract public class Piece {
         setBlocksBasedOnRotation();
     }
     
+    void setRotation(int newRotation) {
+        rotation = newRotation;
+        setBlocksBasedOnRotation();
+    }
+    
     // Returns true if the piece collides with an already filled block.
     // NOTE: You should probably only call this function if you first called unfillBlocks(), and then moved the piece.
     boolean pieceIsCollidingWithFilledBlock() {
