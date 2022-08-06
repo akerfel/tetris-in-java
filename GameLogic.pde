@@ -11,6 +11,7 @@ boolean makePieceFallOrSpawnNewPiece() {
     if (!currentPiece.fallOneStep()) {
         currentPiece = createRandomPiece();
         checkForLineClears();
+        canHoldPiece = true;
         return true;
     }
     return false;
@@ -88,4 +89,24 @@ Piece createRandomPiece() {
 void fillBlockAndSetColor(int x, int y, color rgbColor) {
     grid.grid[x][y].isFilled = true;
     grid.grid[x][y].rgbColor = rgbColor;
+}
+
+void holdCurrentPiece() {
+    if (canHoldPiece) {
+        canHoldPiece = false; // Will be set to true when a piece reaches bottom
+        if (heldPiece == null) {
+            currentPiece.unfillBlocks();
+            heldPiece = currentPiece;
+            currentPiece = createRandomPiece();
+            currentPiece.fillBlocks();
+        }
+        else {
+            currentPiece.unfillBlocks();
+            Piece tempPiece = heldPiece;
+            heldPiece = currentPiece;
+            currentPiece = tempPiece;
+            currentPiece.setStartCoordinates();
+            currentPiece.fillBlocks();
+        }
+    }
 }

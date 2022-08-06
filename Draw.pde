@@ -8,21 +8,20 @@ void drawEverything() {
     }
 }
 
-
 void drawGrid() {
-  for (int x = 0; x < grid.w; x++) {
-    for (int y = 0; y < grid.h; y++) {
-      stroke(130, 130, 130);
-      if (grid.grid[x][y].isFilled) {
-        fill(grid.grid[x][y].rgbColor);
-        rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
-      }
-      else {
-        fill(200);
-        rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
-      }
+    for (int x = 0; x < grid.w; x++) {
+        for (int y = 0; y < grid.h; y++) {
+            stroke(130, 130, 130);
+            if (grid.grid[x][y].isFilled) {
+                  fill(grid.grid[x][y].rgbColor);
+                  rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
+            }
+            else {
+                fill(200);
+                rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
+            }
+        }
     }
-  }
 }
 
 void drawGameOver() {

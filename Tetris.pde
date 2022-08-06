@@ -11,7 +11,10 @@ color backgroundColor;
 int lastTimeCheck;
 Grid grid;
 Piece currentPiece;
+Piece heldPiece;
+boolean canHoldPiece;
 boolean gameOver;
+
 
 void setup() {
     // Cheats
@@ -29,6 +32,8 @@ void setup() {
     grid = new Grid();
     currentPiece = createRandomPiece();
     currentPiece.fillBlocks();
+    heldPiece = null;
+    canHoldPiece = true;
     gameOver = false;
 }
 

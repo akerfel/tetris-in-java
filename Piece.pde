@@ -1,4 +1,4 @@
-public class Piece {
+abstract public class Piece {
     int x;
     int y;
     PVector[] blocks;
@@ -6,10 +6,15 @@ public class Piece {
     color rgbColor;
     
     public Piece() {
-        y = 0;
         rotation = 0;
         blocks = new PVector[4];
     }
+    
+    // Should be overriden by subclasses.
+    abstract void setStartCoordinates();
+    
+    // Needs to be overriden by subclasses
+    abstract void setBlocksBasedOnRotation();
     
     // This function should be called in the end of the constructor for each subclass.
     // This is because some subclasses have different x-coordinate-starting-positions,
@@ -20,11 +25,6 @@ public class Piece {
             fillBlocks();
             gameOver = true;  
         }
-    }
-    
-    // Needs to be overriden by subclasses
-    void setBlocksBasedOnRotation() {
-        
     }
     
     // Return true if rotation was succesful, otherwise false.

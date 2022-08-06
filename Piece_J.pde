@@ -2,9 +2,14 @@ public class Piece_J extends Piece {
     
     public Piece_J() {
         super();
-        x = 4;
+        setStartCoordinates();
         rgbColor = color(0, 0, 255);
         setupAfterSubclassConstructor();
+    }
+    
+    void setStartCoordinates() {
+        y = 0;
+        x = 4;    
     }
     
     void setBlocksBasedOnRotation() {

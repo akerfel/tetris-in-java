@@ -22,5 +22,9 @@ void keyPressed() {
             lastTimeCheck = millis();
             makePieceFallOrSpawnNewPiece();
         }
+        
+        if (key == 'c') {
+            holdCurrentPiece();
+        }
     }
 }
