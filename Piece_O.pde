@@ -2,14 +2,9 @@ public class Piece_O extends Piece {
     
     public Piece_O() {
         super();
-        setStartCoordinates();
+        xOffset = 0;
         rgbColor = color(255, 255, 0);
         setupAfterSubclassConstructor();
-    }
-    
-    void setStartCoordinates() {
-        y = 0;
-        x = 4;    
     }
     
     void setBlocksBasedOnRotation() {
@@ -40,7 +35,6 @@ public class Piece_O extends Piece {
                 blocks[2] = new PVector(0, 1);
                 blocks[3] = new PVector(1, 1);
                 break;
-            
         }
     }
 }

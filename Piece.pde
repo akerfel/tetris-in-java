@@ -1,5 +1,6 @@
 abstract public class Piece {
     int x;
+    int xOffset;
     int y;
     PVector[] blocks;
     int rotation;        // Between 0 and 3
@@ -10,21 +11,24 @@ abstract public class Piece {
         blocks = new PVector[4];
     }
     
-    // Should be overriden by subclasses.
-    abstract void setStartCoordinates();
-    
     // Needs to be overriden by subclasses
     abstract void setBlocksBasedOnRotation();
     
     // This function should be called in the end of the constructor for each subclass.
-    // This is because some subclasses have different x-coordinate-starting-positions,
+    // This is because some subclasses have an offset for the x-coordinate-start-position.
     // and some of the function calls in this function depend on the x-coordinate.
     void setupAfterSubclassConstructor() {
+        setStartCoordinates();
         setBlocksBasedOnRotation();
         if (pieceIsCollidingWithFilledBlock()) {
             fillBlocks();
             gameOver = true;  
         }
+    }
+    
+    void setStartCoordinates() {
+        y = 0;
+        x = 4 + xOffset;
     }
     
     // Return true if rotation was succesful, otherwise false.

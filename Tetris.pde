@@ -29,7 +29,7 @@ void setup() {
     gridBackgroundColor = color(200);
     
     // Dynamic variables
-    size(600, 800);
+    size(800, 800);
     lastTimeCheck = millis();
     grid = new Grid();
     currentPiece = createRandomPiece();
