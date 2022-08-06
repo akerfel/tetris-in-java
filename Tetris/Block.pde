@@ -1,11 +1,9 @@
 public class Block {
     boolean isFilled;
-    boolean isStuck;
     color rgbColor;
   
-    public Block(boolean isFilled, boolean isStuck) {
+    public Block(boolean isFilled) {
         this.isFilled = isFilled;
-        this.isStuck = isStuck;
         this.rgbColor = color(255);
     }
 }
