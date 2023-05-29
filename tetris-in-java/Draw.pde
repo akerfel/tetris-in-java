@@ -3,7 +3,7 @@ void drawEverything() {
     drawGrid();
     drawHeldPiece();
     if (gameOver) {
-        drawGameOver();    
+        drawGameOver();
     }
 }
 
@@ -13,12 +13,11 @@ void drawGrid() {
         for (int y = 0; y < grid.h; y++) {
             stroke(130, 130, 130);
             if (grid.grid[x][y].isFilled) {
-                  fill(grid.grid[x][y].rgbColor);
-                  rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
-            }
-            else {
+                fill(grid.grid[x][y].rgbColor);
+                rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);
+            } else {
                 fill(gridBackgroundColor);
-                rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);  
+                rect(x * grid.blockLength, y * grid.blockLength, grid.blockLength, grid.blockLength);
             }
         }
     }
@@ -29,7 +28,7 @@ void drawHeldPiece() {
     if (heldPiece != null) {
         translate(width - grid.blockLength * (5 - heldPiece.xOffset), grid.blockLength * 2);
         if (heldPiece instanceof Piece_I) {
-            translate(grid.blockLength, 0);    
+            translate(grid.blockLength, 0);
         }
         for (int i = 0; i < heldPiece.blocks.length; i++) {
             fill(heldPiece.rgbColor);

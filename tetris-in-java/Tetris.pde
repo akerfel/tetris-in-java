@@ -1,3 +1,6 @@
+// In this file, all global variables and declared and initialized,
+// and the draw() method is defined, which is called 60 times per second.
+
 // Cheats
 boolean onlySpawnLongPieces;
 
@@ -20,14 +23,14 @@ boolean gameOver;
 void setup() {
     // Cheats
     onlySpawnLongPieces = false;
-    
+
     // Settings
     timeIntervalFlag = 500;
     gridWidth = 10;
     gridHeight = 20;
     backgroundColor = color(0);
     gridBackgroundColor = color(200);
-    
+
     // Dynamic variables
     size(800, 800);
     lastTimeCheck = millis();

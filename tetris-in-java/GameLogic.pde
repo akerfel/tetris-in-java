@@ -2,7 +2,7 @@ void updateGameStateIfTimerReady() {
     if (millis() > lastTimeCheck + timeIntervalFlag) {
         lastTimeCheck = millis();
         makePieceFallOrSpawnNewPiece();
-    }    
+    }
 }
 
 // Makes currentPiece fall, or spawns a new piece if currentPiece has landed.
@@ -20,7 +20,7 @@ boolean makePieceFallOrSpawnNewPiece() {
 void checkForLineClears() {
     for (int y = 0; y < gridHeight; y++) {
         if (lineIsFull(y)) {
-            performLineClear(y);    
+            performLineClear(y);
         }
     }
 }
@@ -45,7 +45,7 @@ void copyLineFromAbove(int y) {
 void clearLine(int lineIndex) {
     for (int x = 0; x < gridWidth; x++) {
         grid.grid[x][lineIndex].isFilled = false;
-    }   
+    }
 }
 
 boolean lineIsFull(int lineIndex) {
@@ -65,23 +65,23 @@ Piece createRandomPiece() {
     if (onlySpawnLongPieces) {
         return new Piece_I();
     }
-    
+
     int randomNum = int(random(0, 7));
     switch (randomNum) {
-        case 0:
-            return new Piece_I();
-        case 1:
-            return new Piece_J();
-        case 2:
-            return new Piece_L();
-        case 3:
-            return new Piece_O();
-        case 4:
-            return new Piece_S();
-        case 5:
-            return new Piece_T();
-        case 6:
-            return new Piece_Z();
+    case 0:
+        return new Piece_I();
+    case 1:
+        return new Piece_J();
+    case 2:
+        return new Piece_L();
+    case 3:
+        return new Piece_O();
+    case 4:
+        return new Piece_S();
+    case 5:
+        return new Piece_T();
+    case 6:
+        return new Piece_Z();
     }
     return null;
 }
@@ -101,8 +101,7 @@ void holdCurrentPiece() {
             currentPiece.fillBlocks();
             heldPiece.setRotation(0);
             heldPiece.setStartCoordinates();
-        }
-        else {
+        } else {
             currentPiece.unfillBlocks();
             Piece tempPiece = heldPiece;
             heldPiece = currentPiece;
